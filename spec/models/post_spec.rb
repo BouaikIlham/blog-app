@@ -30,4 +30,10 @@ RSpec.describe Post, type: :model do
   it 'should increment postcounter for author' do
     expect(post.author.postsCounter).to eq(1)
   end
+  it 'should return 5 recent comments' do
+    6.times do |i|
+      Comment.create(text: "test comment #{i}", post: post, author: user)
+    end
+    expect(post.last_five_comment.length).to eq 5
+  end
 end
