@@ -1,22 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-
   subject { Post.new(title: 'hello world', text: 'This is my first post') }
 
-   before { subject.save }
+  before { subject.save }
 
   it 'post title should be present' do
     subject.title = nil
     expect(subject).to_not be_valid
   end
 
-    it 'commentsCounter must be integer greater than or equal zero' do
+  it 'commentsCounter must be integer greater than or equal zero' do
     subject.commentsCounter = 0
     subject.likescounter = 0
     expect(subject).to_not be_valid
   end
-    it 'likesCounter must be integer greater than or equal zero' do
+  it 'likesCounter must be integer greater than or equal zero' do
     subject.commentsCounter = 0
     subject.likescounter = -2
     expect(subject).to_not be_valid
