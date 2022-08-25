@@ -27,8 +27,7 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
-  it 'should increment postcounter for author' do 
+  it 'should increment postcounter for author' do
     expect(post.author.postsCounter).to eq(1)
   end
-
 end
