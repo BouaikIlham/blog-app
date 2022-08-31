@@ -1,1 +1,15 @@
-<h1>Here is information about a given user</h1>
+
+<div class="posts">
+  <img src=<%= @user.photo %> />
+  <span> <%= @user.name%></span>
+  <p>
+    <span>Number of postes:</span>
+    <%= @user.postsCounter%>
+  </p>
+  <div class="bio">
+  <p>
+  <span>Bio</span>
+    <%= @user.bio%>
+  </p>
+  </div>
+</div>
