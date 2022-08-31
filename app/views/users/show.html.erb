@@ -12,4 +12,15 @@
     <%= @user.bio%>
   </p>
   </div>
+  
+  <% @user.three_recent_posts.each do |post| %>
+  <h4>Post #<%=post.id%></h4>
+  <p><%= post.text%></p>
+  <span>Comments: <%= post.commentsCounter%></span>
+  <span>Likes: <%= post.likescounter%></span>
+  <% end%>
+  
+  <div>
+      <button>See all Posts</button>
+  </div>
 </div>
