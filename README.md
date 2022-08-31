@@ -11,7 +11,6 @@ The Blog app will be a classic example of a blog website. I will create a fully 
 - rails
 - linters
 - Rspec
-
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
