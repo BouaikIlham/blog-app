@@ -1,21 +1,21 @@
 
-<div class="posts">
+
   <%= render "partials/user", user: @user %>
   <div class="bio">
-    <p>
-      <span>Bio</span>
-      <%= @user.bio%>
-    </p>
+    <span class="bioTitle">Bio</span>
+    <p class="text"><%= @user.bio%></p>
   </div>
   
+ <div class="posts">
   <% @user.three_recent_posts.each do |post| %>
   <h4>Post #<%=post.id%></h4>
-  <p><%= post.text.truncate(50)%></p>
-  <span>Comments: <%= post.commentsCounter%></span>
-  <span>Likes: <%= post.likescounter%></span>
-  <% end%>
-  
-  <div>
-    <button><%= link_to "see all posts", user_posts_path(@user)  %></button>
+  <div class="post">
+    <p><%= post.text.truncate(50)%></p>
+     <span class="commentslikes">Comments: <%= post.commentsCounter%> Likes:<%= post.likescounter%> </span>
   </div>
-</div>
+  <% end%>
+ </div>
+  
+  <div class="btn">
+    <button class="button"><%= link_to "see all posts", user_posts_path(@user)  %></button>
+  </div>
