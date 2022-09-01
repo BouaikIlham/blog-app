@@ -4,7 +4,7 @@
 
   <div>
   <% @posts.each do |post|%>
-  <h4><%= link_to "Post #", user_post_path(@user, post) %></h4>
+  <h4><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h4>
   <p><%= post.text%></p>
   <span>Comments: <%= post.commentsCounter%></span>
   <span>Likes: <%= post.likescounter%></span>
