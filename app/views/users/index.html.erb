@@ -1,14 +1,4 @@
 
 <% @users.each do |user|%>
-<div class="users">
-  <img src=<%= user.photo %> />
-  <span> <%= link_to user.name, user_path(user) %></span>
-  <p>
-    <span>Number of postes:</span>
-    <%= user.postsCounter%>
-  </p>
-</div>
-
-
-
+  <%= render "partials/user", user: user %>
 <% end %>

@@ -1,3 +1,27 @@
-<h1>Here is a list of posts for a given user</h1>
+
+<section>
+  <%= render "partials/user", user: @user %>
+
+  <div>
+  <% @posts.each do |post|%>
+  <h4><%= link_to "Post #", user_post_path(@user, post) %></h4>
+  <p><%= post.text%></p>
+  <span>Comments: <%= post.commentsCounter%></span>
+  <span>Likes: <%= post.likescounter%></span>
+
+  <div>
+    <% post.comments.each do |comment| %>
+      <p>
+        <%= comment.author.name %> : <%= comment.text.truncate(80)%>
+      </p>
+    <% end%>
+
+  </div>
+  <% end %>
 
 
+  <div>
+  <button>Pagination</button>
+  <div>
+
+</section>
