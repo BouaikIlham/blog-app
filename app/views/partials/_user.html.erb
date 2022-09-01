@@ -2,9 +2,7 @@
   <img class="img" src=<%= user.photo %> />
   <div class="info">
     <span class="nameofuser"> <%= link_to user.name, user_path(user) %></span>
-  <p class="number">
-    <span>Number of postes:</span>
-    <%= user.postsCounter%>
-  </p>
+  
+   <h4>Number of postes: <%= user.postsCounter%></h4>
   </div>
 </div>
