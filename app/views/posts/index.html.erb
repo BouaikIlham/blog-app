@@ -5,14 +5,14 @@
   <div>
   <% @posts.each do |post|%>
   <h4><%= link_to "Post ##{post.id}", user_post_path(@user, post) %></h4>
-  <p><%= post.text%></p>
+  <p><%= post.text.truncate(50)%></p>
   <span>Comments: <%= post.commentsCounter%></span>
   <span>Likes: <%= post.likescounter%></span>
 
   <div>
     <% post.comments.each do |comment| %>
       <p>
-        <%= comment.author.name %> : <%= comment.text.truncate(80)%>
+        <%= comment.author.name %> : <%= comment.text.truncate(50)%>
       </p>
     <% end%>
 

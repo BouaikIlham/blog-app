@@ -10,7 +10,7 @@
   
   <% @user.three_recent_posts.each do |post| %>
   <h4>Post #<%=post.id%></h4>
-  <p><%= post.text%></p>
+  <p><%= post.text.truncate(50)%></p>
   <span>Comments: <%= post.commentsCounter%></span>
   <span>Likes: <%= post.likescounter%></span>
   <% end%>
