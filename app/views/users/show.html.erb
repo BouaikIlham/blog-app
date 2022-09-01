@@ -1,1 +1,21 @@
-<h1>Here is information about a given user</h1>
+
+
+  <%= render "partials/user", user: @user %>
+  <div class="bio">
+    <span class="bioTitle">Bio</span>
+    <p class="text"><%= @user.bio%></p>
+  </div>
+  
+ <div class="posts">
+  <% @user.three_recent_posts.each do |post| %>
+  <h4>Post #<%=post.id%></h4>
+  <div class="post">
+    <p><%= post.text.truncate(50)%></p>
+     <span class="commentslikes">Comments: <%= post.commentsCounter%> Likes:<%= post.likescounter%> </span>
+  </div>
+  <% end%>
+ </div>
+  
+  <div class="btn">
+    <button class="button"><%= link_to "see all posts", user_posts_path(@user)  %></button>
+  </div>
