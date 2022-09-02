@@ -3,6 +3,8 @@
         <h4>Post#<%= @post.id%> By <%= @post.author.name%> </h4>
         <span>Comments:<%= @post.commentsCounter%> Likes: <%=@post.likescounter%></span>
         <p><%= @post.text%></p>
+        <%= render'/partials/new_like' %>
+
     </div>
 
    <div>
@@ -11,6 +13,7 @@
         <%= comment.author.name %> : <%= comment.text.truncate(80)%>
       </p>
     <% end%>
+    <%= render '/partials/new_comment'%>
 
   </div>
 </section>

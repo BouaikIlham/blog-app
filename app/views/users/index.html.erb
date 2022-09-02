@@ -1,4 +1,8 @@
 
+
+<button type="button" class="create-btn">
+    <%= link_to "Create A Post For The First User", new_user_post_path(@users.first.id)%>
+  </button>
 <% @users.each do |user|%>
   <%= render "partials/user", user: user %>
 <% end %>
