@@ -4,11 +4,11 @@ RSpec.describe 'posts/show.html.erb', type: :system do
     before :each do
       @user = User.create(id: 1, name: 'username test', photo: 'photo/test', bio: 'this is index test', postsCounter: 4)
       @post1 = Post.create(id: 1, title: 'title1', text: 'text', author_id: 1, likescounter: 5)
-      @comment = Comment.create(text: 'this is comment test', post_id: 1, author_id:1)
+      @comment = Comment.create(text: 'this is comment test', post_id: 1, author_id: 1)
       get user_post_path(@user, @post1)
       @page = response.body
     end
-    it "display author name" do
+    it 'display author name' do
       expect(@page).to include(@user.name)
     end
 

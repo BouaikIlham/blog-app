@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'users/show.html.erb', type: :system do
   describe 'show page' do
     before :each do
-      @user = User.create(id: 1,name: 'test', photo: 'photo/test', bio: 'this is show test', postsCounter: 4)
+      @user = User.create(id: 1, name: 'test', photo: 'photo/test', bio: 'this is show test', postsCounter: 4)
       @post1 = Post.create(title: 'post title1', text: 'post text', author_id: 1)
       @post2 = Post.create(title: 'post title2', text: 'post text2', author_id: 1)
       @post3 = Post.create(title: 'post title3', text: 'post text3', author_id: 1)
