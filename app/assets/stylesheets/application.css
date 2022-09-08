@@ -175,3 +175,8 @@ textarea {
   width: 100%;
   text-transform: uppercase;
 }
+
+section {
+  width: 70%;
+  margin: 40px auto;
+}
