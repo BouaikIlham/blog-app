@@ -3,11 +3,11 @@
   <%= link_to 'posts', users_path, class: '' %>
   <nav class="nav d-flex justify-content-between w-50" id="navbar">
       <% if user_signed_in? %>
-      <%= link_to 'sign out', destroy_user_session_path, class: '',data: { turbo: "false" } %>
+      <%= link_to 'sign out', destroy_user_session_path, method: :delete, data: { turbo: "false" } %>
       <% else %>
-      <%= link_to 'sign up', new_user_registration_path, class: '',data: { turbo: "false" } %>
-      <%= link_to 'sign in', new_user_session_path, class: '', data: { turbo: "false" } %>
+      <%= link_to 'sign up', new_user_registration_path, method: :delete, data: { turbo: "false" } %>
+      <%= link_to 'sign in', new_user_session_path, method: :delete, data: { turbo: "false" } %>
       <% end %>
-      <%= link_to 'about us', users_path, class: '', data: { turbo: "false" } %>
+      <%= link_to 'about us', users_path, class: '', method: :delete, data: { turbo: "false" } %>
   </nav>
 </header>
