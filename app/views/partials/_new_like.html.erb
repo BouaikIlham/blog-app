@@ -1,4 +1,6 @@
-
-    <%= form_with model: Like, url: user_post_likes_path(@post.author, @post), method: :post do |form| %>
-    <% form.submit "Like", class:"submit-btn" %>
-    <% end %>
+<%= form_with model: Like, url: user_post_likes_path(@post.author, @post), method: :post do |form| %>
+<%= form.hidden_field :post_id, value: @post.id %>
+<div class="actions">
+  <%= form.submit "Like", class: 'submit-btn' %>
+</div>
+<% end %>
