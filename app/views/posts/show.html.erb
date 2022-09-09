@@ -7,11 +7,6 @@
     </div>
 
    <ul class="comments-list-cont">
-      <% if @post.commentsCounter > 0 %>
-          <%= render 'partials/comment', comments: @post.comments %>
-      <% else %>
-      <li>No comments</li>
-    <% end %>
   <%= render '/partials/new_comment', comments: @post.comments%>
   </ul>   
 </section>
