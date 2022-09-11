@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    user = User.find(post.user_id)  
+    user = User.find(post.user_id)
     post.comments.destroy_all if post.comments.any?
     post.destroy
     if user.save
